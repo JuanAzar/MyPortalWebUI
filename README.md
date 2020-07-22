@@ -7,33 +7,24 @@ This project is intended to be an example of a full web application development 
 Use these instructions to get the project up and running.
 
 ### Prerequisites
-We would need the following tools>
+We would need the following tools:
 
 * [Visual Studio Code](https://code.visualstudio.com/Download) (Recommended)
 * [Node.js](https://nodejs.org/es/download/) (version 10 or later) with npm (version 6.9.0 or later)
+* [Angular](https://angular.io/guide/setup-local) (version 9 or later)
 
-## Installation
+### Setup and 
+Follow these steps to get the project set up:
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+1. Clone the repository
+1. Download and install packages using the following command: ```bash npm install ```
+1. Launch the application using: ```bash ng serve ```
+1. Open http://localhost:4200/ in your browser to view the Web UI.
 
-```bash
-pip install foobar
-```
+## Technologies
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+* Angular 9.1.11
+* Angular/CLI 9.1.9
+* Node 10.16.0
+* NgBootstrap 6.2.0
+* Npm 6.14.5
