@@ -18,7 +18,7 @@ Follow these steps to get the project set up:
 1. Clone the repository
 1. Download and install packages using the following command: ``` npm install ```
 1. Build and serve the application using the following command: ``` ng serve ```
-1. Open http://localhost:4200/ in your browser to view the Web UI.
+1. Open http://localhost:4200/ in your browser to view the Web UI
 
 ## Technologies
 * Angular 9.1.11
