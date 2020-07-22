@@ -1,0 +1,7 @@
+<nav>
+    <ul [(activeId)]="linkId" #nav="ngbNav" ngbNav class="nav-tabs">
+        <li [ngbNavItem]="link.id" *ngFor="let link of links">
+            <a ngbNavLink routerLink="{{ link.module }}">{{ link.title }}</a>            
+        </li>        
+    </ul>
+</nav>
