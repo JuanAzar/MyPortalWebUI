@@ -20,6 +20,11 @@ Follow these steps to get the project set up:
 1. Launch the application using: ```bash ng serve ```
 1. Open http://localhost:4200/ in your browser to view the Web UI.
 
+```bash
+pip install foobar
+```
+
+```bash pip install foobar ```
 ## Technologies
 * Angular 9.1.11
 * Angular/CLI 9.1.9
