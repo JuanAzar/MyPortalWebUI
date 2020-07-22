@@ -7,7 +7,10 @@ This project is intended to be an example of a full web application development 
 Use these instructions to get the project up and running.
 
 ### Prerequisites
-Tools
+We would need the following tools>
+
+* [Visual Studio Code](https://code.visualstudio.com/Download) (Recommended)
+* [Node.js](https://nodejs.org/es/download/) (version 10 or later) with npm (version 6.9.0 or later)
 
 ## Installation
 
