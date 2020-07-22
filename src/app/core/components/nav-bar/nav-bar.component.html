@@ -1,7 +1,10 @@
 <nav>
     <ul [(activeId)]="linkId" #nav="ngbNav" ngbNav class="nav-tabs">
-        <li [ngbNavItem]="link.id" *ngFor="let link of links">
-            <a ngbNavLink routerLink="{{ link.module }}">{{ link.title }}</a>            
+        <li ngbDropdown [ngbNavItem]="link.linkId" *ngFor="let link of links" class="nav-item">
+            <a href (click)="false" class="nav-link" ngbDropdownToggle>{{ link.title }}</a>
+            <div ngbDropdownMenu>
+                <button ngbDropdownItem routerLink="{{ section.module }}" *ngFor="let section of link.sections">{{ section.title }}</button>                
+            </div>
         </li>        
     </ul>
 </nav>
