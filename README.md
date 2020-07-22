@@ -16,19 +16,10 @@ We would need the following tools:
 Follow these steps to get the project set up:
 
 1. Clone the repository
-1. Download and install packages using the following command: ```bash npm install ```
-1. Launch the application using: ```bash ng serve ```
+1. Download and install packages using the following command: ``` npm install ```
+1. Launch the application using: ``` ng serve ```
 1. Open http://localhost:4200/ in your browser to view the Web UI.
 
-```bash
-pip install foobar
-```
-
-```bash pip install foobar ```
-
-```
-pip install foobar
-```
 ## Technologies
 * Angular 9.1.11
 * Angular/CLI 9.1.9
