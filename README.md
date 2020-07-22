@@ -25,6 +25,10 @@ pip install foobar
 ```
 
 ```bash pip install foobar ```
+
+```
+pip install foobar
+```
 ## Technologies
 * Angular 9.1.11
 * Angular/CLI 9.1.9
