@@ -1,33 +1,62 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ControlContainer } from '@angular/forms';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss']  
 })
 export class NavBarComponent implements OnInit {
-  linkId = 1;
-  links = [ 
+  activeMenuId = 0;
+  menus = [ 
     {
-      linkId: 1, 
+      menuId : 1, 
       title: 'Clients',
       sections: [
-        { title: "New Client", module: "/client/add" },
-        { title: "Client List", module: "/client/list" }
+        { title: "New Client", component: "/client/add" },
+        { title: "Client List", component: "/client/list" }
       ]
     },
     {
-      linkId: 2, 
+      menuId: 2, 
       title: 'Domains',
       sections: [
-        { title: "New Domain", module: "/domain/add" },
-        { title: "Domain List", module: "/domain/list" }
+        { title: "New Domain", component: "/domain/add" },
+        { title: "Domain List", component: "/domain/list" }
       ]
     }
   ]  
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
+    this.router.events.subscribe(event => {      
+      if (event instanceof NavigationEnd ) {
+        this.onSectionSelection(event.urlAfterRedirects);
+      }
+    });    
+  }
+
+  getNavItemClass(menuId: number): string{
+    let linkClass = 'nav-item';    
+    return (this.activeMenuId == menuId) ? linkClass + ' show' : linkClass;    
+  }  
+
+  onSectionSelection(component: string){    
+    this.activeMenuId = this.getMenuIdBySectionComponent(component);    
+  }
+
+  private getMenuIdBySectionComponent(component: string): number{
+    let menu = null;
+    
+    menu = this.menus.find(menu => {
+      return menu.sections.find(section => {
+        return section.component == component;
+      })           
+    })
+      
+    return (menu != null) ? menu.menuId : 0;
   }
 }

@@ -1,10 +1,16 @@
-<nav>
-    <ul [(activeId)]="linkId" #nav="ngbNav" ngbNav class="nav-tabs">
-        <li ngbDropdown [ngbNavItem]="link.linkId" *ngFor="let link of links" class="nav-item">
-            <a href (click)="false" class="nav-link" ngbDropdownToggle>{{ link.title }}</a>
-            <div ngbDropdownMenu>
-                <button ngbDropdownItem routerLink="{{ section.module }}" *ngFor="let section of link.sections">{{ section.title }}</button>                
-            </div>
-        </li>        
-    </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">    
+    <a class="navbar-brand" href="#">MyPortal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li [class]="getNavItemClass(menu.menuId)" ngbDropdown *ngFor="let menu of menus">
+                <a class="nav-link" ngbDropdownToggle role="button">{{ menu.title }}</a>
+                <div ngbDropdownMenu class="dropdown-menu">
+                    <button ngbDropdownItem routerLink="{{ section.component }}" *ngFor="let section of menu.sections">{{ section.title }}</button>                
+                </div>
+            </li>        
+        </ul>
+    </div>    
 </nav>
