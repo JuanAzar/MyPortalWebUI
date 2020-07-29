@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { 
-    path: 'client', 
-    loadChildren: () => import('./features/clients/client.module').then(m => m.ClientModule) 
+  {
+    path: 'client',
+    loadChildren: () => import('./features/clients/client.module').then(m => m.ClientModule)
   },
-  { 
-    path: 'domain', 
-    loadChildren: () => import('./features/domains/domain.module').then(m => m.DomainModule) 
+  {
+    path: 'domain',
+    loadChildren: () => import('./features/domains/domain.module').then(m => m.DomainModule)
   },
   {
     path: '',
@@ -20,11 +20,12 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent
   }
-  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule{
+
+}

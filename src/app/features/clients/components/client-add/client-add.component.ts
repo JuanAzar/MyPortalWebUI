@@ -9,8 +9,8 @@ import { Client } from '../../shared/client';
   styleUrls: ['./client-add.component.scss']
 })
 export class ClientAddComponent implements OnInit {
-  alertMessage = "";
-  alertType = "alert-success";
+  alertMessage = '';
+  alertType = 'alert-success';
 
   newClientForm = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -53,27 +53,26 @@ export class ClientAddComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
-    
   }
 
   onSubmit(){
-    let client = new Client();
+    const client = new Client();
     client.firstName = this.firstName.value;
     client.lastName = this.lastName.value;
     client.company = this.company.value;
-    client.email = this.email.value;    
+    client.email = this.email.value;
     client.birthDate = new Date(this.birthDate.value);
     client.primaryPhoneNumber = this.primaryPhoneNumber.value;
     client.secondaryPhoneNumber = this.secondaryPhoneNumber.value;
 
     this.clientService.add(client)
-      .subscribe(response => {        
-        this.alertMessage = "Client successfully added!";
-        this.alertType = "alert-success";
+      .subscribe(response => {
+        this.alertMessage = 'Client successfully added!';
+        this.alertType = 'alert-success';
       },
       error => {
-        this.alertMessage = "Oops! An error has ocurred.";
-        this.alertType = "alert-danger";
+        this.alertMessage = 'Oops! An error has ocurred.';
+        this.alertType = 'alert-danger';
       });
   }
 }

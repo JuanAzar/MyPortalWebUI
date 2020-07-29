@@ -5,58 +5,57 @@ import { ControlContainer } from '@angular/forms';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']  
+  styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
   activeMenuId = 0;
-  menus = [ 
+  menus = [
     {
-      menuId : 1, 
+      menuId : 1,
       title: 'Clients',
       sections: [
-        { title: "New Client", component: "/client/add" },
-        { title: "Client List", component: "/client/list" }
+        { title: 'New Client', component: '/client/add' },
+        { title: 'Client List', component: '/client/list' }
       ]
     },
     {
-      menuId: 2, 
+      menuId: 2,
       title: 'Domains',
       sections: [
-        { title: "New Domain", component: "/domain/add" },
-        { title: "Domain List", component: "/domain/list" }
+        { title: 'New Domain', component: '/domain/add' },
+        { title: 'Domain List', component: '/domain/list' }
       ]
     }
-  ]  
+  ];
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {      
+    this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd ) {
         this.onSectionSelection(event.urlAfterRedirects);
       }
-    });    
+    });
   }
 
   getNavItemClass(menuId: number): string{
-    let linkClass = 'nav-item';    
-    return (this.activeMenuId == menuId) ? linkClass + ' show' : linkClass;    
-  }  
+    const linkClass = 'nav-item';
+    return (this.activeMenuId === menuId) ? linkClass + ' show' : linkClass;
+  }
 
-  onSectionSelection(component: string){    
-    this.activeMenuId = this.getMenuIdBySectionComponent(component);    
+  onSectionSelection(component: string){
+    this.activeMenuId = this.getMenuIdBySectionComponent(component);
   }
 
   private getMenuIdBySectionComponent(component: string): number{
-    let menu = null;
-    
-    menu = this.menus.find(menu => {
+    let currentMenu = null;
+
+    currentMenu = this.menus.find(menu => {
       return menu.sections.find(section => {
-        return section.component == component;
-      })           
-    })
-      
-    return (menu != null) ? menu.menuId : 0;
+        return section.component === component;
+      });
+    });
+    return (currentMenu != null) ? currentMenu.menuId : 0;
   }
 }

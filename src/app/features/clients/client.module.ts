@@ -6,18 +6,18 @@ import { ClientListComponent } from './components/client-list/client-list.compon
 import { ClientService } from './shared/client.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
-@NgModule({  
+@NgModule({
   imports: [
     CommonModule,
     ClientRoutingModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule
   ],
   declarations: [
-    ClientAddComponent, 
+    ClientAddComponent,
     ClientListComponent
   ],
   providers: [
-    ClientService  
+    ClientService
   ]
 })
 export class ClientModule { }

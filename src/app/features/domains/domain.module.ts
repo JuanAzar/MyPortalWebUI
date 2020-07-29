@@ -10,8 +10,8 @@ import { DomainService } from './shared/domain.service';
     CommonModule,
     DomainRoutingModule
   ],
-  declarations: [    
-    DomainAddComponent,    
+  declarations: [
+    DomainAddComponent,
     DomainListComponent
   ],
   providers: [

@@ -8,7 +8,7 @@ import { ClientService } from '../../shared/client.service';
   styleUrls: ['./client-list.component.scss']
 })
 export class ClientListComponent implements OnInit {
-  clients: Array<Client> = []; 
+  clients: Array<Client> = [];
 
   constructor(private clientService: ClientService) { }
 
@@ -20,5 +20,5 @@ export class ClientListComponent implements OnInit {
       error => {
 
       });
-  }    
+  }
 }

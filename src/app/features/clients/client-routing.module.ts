@@ -11,9 +11,9 @@ const routes: Routes = [
     redirectTo: 'list',
     pathMatch: 'full'
   }
-]
+];
 
-@NgModule({  
+@NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

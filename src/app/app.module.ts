@@ -11,9 +11,9 @@ import { ClientRoutingModule } from './features/clients/client-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
-    CoreModule, 
-    ClientRoutingModule    
+    AppRoutingModule,
+    CoreModule,
+    ClientRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
