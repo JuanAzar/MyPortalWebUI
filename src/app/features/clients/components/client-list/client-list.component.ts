@@ -13,7 +13,12 @@ export class ClientListComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
-    this.clients = this.clientService.getAll();
-  }
+    this.clientService.getAll()
+      .subscribe(response => {
+        this.clients = response;
+      },
+      error => {
 
+      });
+  }    
 }
